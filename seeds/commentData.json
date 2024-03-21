@@ -1,0 +1,27 @@
+[
+    {
+        "content": "I agree",
+        "user_id": 2,
+        "post_id": 1
+    },
+    {
+        "content": "It's so right!",
+        "user_id": 3,
+        "post_id": 1
+    },
+    {
+        "content": "I agree too",
+        "user_id": 2,
+        "post_id": 1
+    },
+    {
+        "content": "I disagree",
+        "user_id": 3,
+        "post_id": 2
+    },
+    {
+        "content": "Why do you disagree?",
+        "user_id": 2,
+        "post_id": 2
+    }
+]

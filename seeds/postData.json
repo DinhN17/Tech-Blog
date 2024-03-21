@@ -1,0 +1,17 @@
+[
+    {
+        "title": "Why MVC is so important",
+        "content": "MVC allows developers to maintain a true separation of concerns, devising their code between the Model layer for data, the View layer for design, and the Controller layer for application logic.",
+        "user_id": 1
+    },
+    {
+        "title": "Authentication vs. Authorization",
+        "content": "Authentication is the process of verifying who you really are. Authorization is the process of verifying what you can do with your data.",
+        "user_id": 2
+    },
+    {
+        "title": "What is ORM?",
+        "content": "An ORM is a software tool that allows developers to work with relational databases in an object-oriented fashion.",
+        "user_id": 3
+    }
+]
