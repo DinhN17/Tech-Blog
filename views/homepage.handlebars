@@ -3,12 +3,7 @@
 <div class="col mb-4 post">
   <div class="flex-row post">
     <h2>
-      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-      {{#if logged_in}}
-      <a href="api/posts/{{post.id}}">{{post.title}}</a>
-      {{else}}
-      <a href="/login">{{post.title}}</a>
-      {{/if}}
+      <a href="/post/{{post.id}}">{{post.title}}</a>
     </h2>
     <p>Created by {{post.user.username}} on {{format_date post.created_at}}</p>
   </div>
@@ -19,3 +14,6 @@
   </div>
 </div>
 {{/each}}
+{{!-- {{#each posts as |post|}}
+{{> post-details}}
+{{/each}} --}}

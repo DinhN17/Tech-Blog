@@ -24,6 +24,14 @@ header, .post {
   flex-wrap: wrap;
 }
 
+.comment {
+  background-color: var(--cloud-burst);
+  color: var(--akaroa);
+  justify-content: space-between;
+  padding: 3px;
+  flex-wrap: wrap;
+}
+
 h1, h2, p {
   background-color: inherit;
   color: inherit;

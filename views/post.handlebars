@@ -1,0 +1,28 @@
+<div class="col mb-4 post">
+  <div class="flex-row post">
+    <h2>
+      <a href="/post/{{post.id}}">{{post.title}}</a>
+    </h2>
+    <p>Created by {{post.user.username}} on {{format_date post.created_at}}</p>
+  </div>
+  <div class="col-mb-4">
+    <p>
+      {{post.content}}
+    </p>
+  </div>
+</div>
+
+<!-- Loop over each object in the posts array -->
+{{#each comments as |comment| }}
+<div class="col mb-3 comment">
+    <div class="comment">
+        {{!-- <h2><a href="api/comments/{{comment.id}}"></a></h2> --}}
+    </div>
+    <div class="col-mb-3">
+        <p>
+        {{comment.content}}
+        </p>
+        <p>-- Created by {{comment.user.username}} on {{format_date comment.created_at}}</p>
+    </div>
+</div>
+{{/each}}
