@@ -13,13 +13,12 @@
   <div class="flex-column justify-space-around">
     <header class="flex-column justify-space-between align-left p-2">
       <nav class="mb-5">
+        <a href="/">Home</a> 
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <a href="/">Home</a> 
         <a href="/dashboard">Dashboard</a> 
         <button class="no-button" id="logout">Logout</button>
         {{else}}
-        <a href="/">Home</a> 
         <a href="/">Dashboard</a> 
         <a href="/login">Login</a>
         {{/if}}
@@ -29,6 +28,9 @@
       </h1>
     </header>
     <main class="container container-fluid mt-5">
+        <div class="flex-column justify-content-center mb-3">
+            <a class="btn btn-primary" href="/new-post">+ New Post</a>
+        </div>
       <!-- Render the sub layout -->
       {{{ body }}}
     </main>
