@@ -13,16 +13,22 @@
 </div>
 
 <!-- Loop over each object in the posts array -->
-{{#each comments as |comment| }}
+{{#each post.comments as |comment| }}
+{{> comment-details}}
+{{/each}}
+
 <div class="col mb-3 comment">
     <div class="comment">
-        {{!-- <h2><a href="api/comments/{{comment.id}}"></a></h2> --}}
+        <h2></h2>
     </div>
-    <div class="col-mb-3">
-        <p>
-        {{comment.content}}
-        </p>
-        <p>-- Created by {{comment.user.username}} on {{format_date comment.created_at}}</p>
-    </div>
+    <form class="form comment-form">
+        <div class="form-group">
+            <label for="comment">Comment:</label>
+            <textarea data-post-id="{{post.id}}" name="comment" id="comment-input" class="form-group form-textarea"></textarea>
+        </div>
+        <div class="flex-column justtify-content-center">
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+    </form>
 </div>
-{{/each}}
+<script src="../js/commentSubmit.js"></script>

@@ -1,11 +1,11 @@
 <section class="card">
     <div class="col-mb-4 post">
-        <h2><a href="api/comments/{{comment.id}}"></a></h2>
+        <h2><a href="api/comments/{{id}}"></a></h2>
     </div>
     <div class="col-mb-4">
         <p>
-        {{comment.content}}
+        {{content}}
         </p>
-        <p>-- Created by {{comment.user.username}} on {{format_date comment.created_at}}</p>
+        <p>-- Created by {{user.username}} on {{format_date created_at}}</p>
     </div>
 </section>

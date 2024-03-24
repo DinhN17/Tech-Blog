@@ -9,11 +9,17 @@ const withAuth = require('../../utils/auth');
 //     post_id: 1
 // }
 router.post('/', withAuth, async (req, res) => {
+    console.log(req.body);
     try {
-        const newComment = await Comment.create({
-            ...req.body,
-            user_id: req.session.user_id,
-        });
+        req.body["user_id"] = parseInt(req.session.user_id);
+        // const newComment = await Comment.create({
+        //     content: req.body.content,
+        //     user_id: parseInt(req.session.user_id),
+        //     post_id: parseInt(req.body.post_id)
+        // });
+
+        console.log(req.body);
+        const newComment = await Comment.create(req.body);
 
         res.status(200).json(newComment);
     } catch (err) {
