@@ -5,11 +5,12 @@
     <form class="form post-form">
         <div class="form-group">
             <label for="title">Title:</label>
-            <input data-post-id="{{id}}" class="form-input" type="text" id="title" />
+            {{!-- <input data-post-id="{{post.id}}" placeholder="{{post.title}}" class="form-input" type="text" id="title" /> --}}
+            <textarea data-post-id="{{post.id}}" name="post-title" id="title" class="form-group form-textarea bg-white" rows="1">{{post.title}}</textarea>
         </div>
         <div class="form-group">
             <label for="comment">Content:</label>
-            <textarea name="post" id="content" class="form-group form-textarea bg-white" rows="4"></textarea>
+            <textarea name="post-content" id="content" class="form-group form-textarea bg-white" rows="4">{{post.content}}</textarea>
         </div>
         <div class="flex-column mb-3 justtify-content-center">
             <button class="btn btn-primary" type="submit">Update Post</button>

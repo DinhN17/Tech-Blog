@@ -74,17 +74,27 @@ router.get('/new-post', withAuth, async (req, res) => {
 router.get('/edit-post/:id', withAuth, async (req, res) => {
   try {
     if (req.params.id) {
-      res.render('edit-post', {
-        id: req.params.id,
-        layout: 'dashboard',
-        logged_in: req.session.logged_in
-      });
-      
+      const postData = await Post.findByPk(req.params.id);
+      var post = postData.get({ plain: true });
+
+      console.log(post.user_id);
+      console.log(req.session.user_id);
+
+      if (post.user_id == req.session.user_id) {
+        res.render('edit-post', {
+          post,
+          layout: 'dashboard',
+          logged_in: req.session.logged_in
+        });
+        
+      } else {
+        res.status(404).json({ message: 'This post is not belong to the user!' });
+      };
     } else {
-      
-    }
+      res.status(404).json({ message: 'No post found with this id!' });
+    };
   } catch (error) {
-    
+    res.status(500).json(error);
   }
 })
 
