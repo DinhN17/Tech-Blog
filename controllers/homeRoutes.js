@@ -71,6 +71,23 @@ router.get('/new-post', withAuth, async (req, res) => {
   }
 });
 
+router.get('/edit-post/:id', withAuth, async (req, res) => {
+  try {
+    if (req.params.id) {
+      res.render('edit-post', {
+        id: req.params.id,
+        layout: 'dashboard',
+        logged_in: req.session.logged_in
+      });
+      
+    } else {
+      
+    }
+  } catch (error) {
+    
+  }
+})
+
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
     // Get all posts and JOIN with user data
@@ -88,6 +105,10 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
     // Serialize data so the template can read it
     const posts = postData.map((post) => post.get({ plain: true }));
+    for (let index = 0; index < posts.length; index++) {
+      const element = posts[index];
+      element["href"] = `/edit-post/${element.id}`;
+    };
 
     // Pass serialized data and session flag into template
     res.render('homepage', { 
@@ -114,6 +135,10 @@ router.get('/', async (req, res) => {
 
     // Serialize data so the template can read it
     const posts = postData.map((post) => post.get({ plain: true }));
+    for (let index = 0; index < posts.length; index++) {
+      const element = posts[index];
+      element["href"] = `/post/${element.id}`;
+    };
 
     // Pass serialized data and session flag into template
     res.render('homepage', { 

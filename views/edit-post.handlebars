@@ -1,0 +1,22 @@
+<div class="col mb-3 post">
+    <div class="post">
+        <h2>Edit Post</h2>
+    </div>
+    <form class="form post-form">
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input data-post-id="{{id}}" class="form-input" type="text" id="title" />
+        </div>
+        <div class="form-group">
+            <label for="comment">Content:</label>
+            <textarea name="post" id="content" class="form-group form-textarea bg-white" rows="4"></textarea>
+        </div>
+        <div class="flex-column mb-3 justtify-content-center">
+            <button class="btn btn-primary" type="submit">Update Post</button>
+        </div>
+        <div class="flex-column mb-3 justtify-content-center pb-3">
+            <button class="btn btn-primary delete-post-btn" type="button">Delete Post</button>
+        </div>
+    </form>
+</div>
+<script src="../js/editPost.js"></script>
